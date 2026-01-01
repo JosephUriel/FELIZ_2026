@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nuevo año 2026</title>
+<title>Avanza con Fe ✨ 2026</title>
 
 <style>
 body {
@@ -18,14 +18,14 @@ body {
     overflow: hidden;
 }
 
-/* Canvas de fuegos */
+
 canvas {
     position: absolute;
     inset: 0;
     z-index: -1;
 }
 
-/* Tarjeta principal */
+
 .card {
     width: min(90%, 520px);
     text-align: center;
@@ -38,14 +38,14 @@ canvas {
 
     box-shadow: 0 0 60px rgba(255,215,0,0.35);
 
-    /* 🔑 SUBE la tarjeta desde el inicio */
+
     transform: translateY(-40px);
 
     animation: appear 1.8s ease;
 }
 
 
-/* Títulos */
+
 h1 {
     font-size: clamp(2.3em, 6vw, 3em);
     color: #ffd369;
@@ -54,7 +54,7 @@ h1 {
     animation: glow 2s infinite alternate;
 }
 
-/* Texto de cita */
+
 .quote {
     font-size: clamp(1.2em, 4.5vw, 1.5em);
     line-height: 1.7;
@@ -65,7 +65,7 @@ h1 {
     text-shadow: 0 0 8px rgba(0,0,0,0.6);
 }
 
-/* Autor */
+
 .author {
     margin-top: 18px;
     font-size: 1em;
@@ -73,7 +73,7 @@ h1 {
     text-shadow: 0 0 6px rgba(0,0,0,0.6);
 }
 
-/* Footer */
+
 .footer {
     margin-top: 30px;
     font-size: 0.9em;
@@ -99,7 +99,7 @@ h1 {
 }
 
 
-/* 📱 FIX DEFINITIVO PARA CELULAR */
+
 @media (max-width: 480px) {
 
     body {
@@ -148,13 +148,47 @@ h1 {
     color: white;
 
     animation: pulse 2.5s infinite;
-    pointer-events: none; /* 🔑 no bloquea el toque */
+    pointer-events: none;
 }
 
 @keyframes pulse {
     0%   { opacity: 0.4; }
     50%  { opacity: 0.85; }
     100% { opacity: 0.4; }
+}
+
+.credit {
+    position: absolute;
+    bottom: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75em;
+    opacity: 0.55;
+    letter-spacing: 1px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    pointer-events: auto;
+}
+
+.credit a {
+    display: inline-flex;
+    align-items: center;
+    color: white;
+    opacity: 0.8;
+    transition: transform 0.3s ease, opacity 0.3s;
+}
+
+.credit a:hover {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+.credit svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
 }
 
 
@@ -175,9 +209,19 @@ h1 {
 
 <div class="hint-center">Toca la pantalla y ve la magia</div>
 
+<div class="credit">
+    Hecho por <strong>Uriel Alvarez</strong> • 
+    <a href="https://www.instagram.com/uriel_alvarezpe?igsh=dnltNjV1Z3F3ZW1k" target="_blank" aria-label="Instagram">
+        <svg viewBox="0 0 24 24">
+            <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.9a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2z"/>
+        </svg>
+    </a>
+</div>
+
+
 
 <script>
-/* 📜 CITAS SUD */
+
 const quotes = [
     {
         text: "Las decisiones correctas, tomadas de manera constante, conducen a destinos eternos.",
@@ -224,7 +268,6 @@ function changeQuote() {
 changeQuote();
 setInterval(changeQuote, 7000);
 
-/* 🎆 FUEGOS ARTIFICIALES PRO */
 const canvas = document.getElementById("fx");
 const ctx = canvas.getContext("2d");
 canvas.width = innerWidth;
@@ -312,9 +355,8 @@ function animate() {
 setInterval(() => launchFirework(), 1100);
 animate();
 
-/* 👉 TOCAR PANTALLA */
 window.addEventListener("pointerdown", e => {
-    e.preventDefault(); // 🔒 bloquea acciones del navegador
+    e.preventDefault(); 
 
     explode(e.clientX, e.clientY, Math.random() * 360, "star");
     starBurst(e.clientX, e.clientY);
